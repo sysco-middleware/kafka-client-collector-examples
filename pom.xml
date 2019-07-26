@@ -34,5 +34,10 @@
             <artifactId>kafka-streams</artifactId>
             <version>${kafka-client.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_httpserver</artifactId>
+            <version>${io.prometheus.version}</version>
+        </dependency>
     </dependencies>
 </project>
