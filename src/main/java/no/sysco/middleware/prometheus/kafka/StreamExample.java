@@ -25,7 +25,7 @@ public class StreamExample {
         // http server
         HTTPServer server = new HTTPServer(8083);
         Runtime.getRuntime().addShutdownHook(new Thread(server::stop));
-        KafkaClientsJmxExports.initialize();
+        KafkaClientsJmxExports.initialize(kafkaStreams);
     }
 
     static Topology buildTopology(String in, String out) {

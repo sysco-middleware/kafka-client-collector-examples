@@ -22,7 +22,7 @@ public class ProducerExample {
 
         final HTTPServer server = new HTTPServer(8081);
         Runtime.getRuntime().addShutdownHook(new Thread(server::stop));
-        KafkaClientsJmxExports.initialize();
+        KafkaClientsJmxExports.initialize(kafkaProducer1, kafkaProducer2);
 
         while (true) {
             Thread.sleep(5_000);

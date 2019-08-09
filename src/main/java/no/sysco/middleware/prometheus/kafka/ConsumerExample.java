@@ -22,7 +22,7 @@ public class ConsumerExample {
 
         final HTTPServer server = new HTTPServer(8082);
         Runtime.getRuntime().addShutdownHook(new Thread(server::stop));
-        KafkaClientsJmxExports.initialize();
+        KafkaClientsJmxExports.initialize(kafkaConsumer);
 
         kafkaConsumer.subscribe(Collections.singleton(topic));
         while (true) {
