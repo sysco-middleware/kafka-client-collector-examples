@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>no.sysco.middleware.prometheus</groupId>
                 <artifactId>kafka-client-collector</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4</version>
             </dependency>
             <!--kafka clients-->
             <dependency>
@@ -53,6 +53,11 @@
             <dependency>
                 <groupId>io.prometheus</groupId>
                 <artifactId>simpleclient_httpserver</artifactId>
+                <version>${io.prometheus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>simpleclient_hotspot</artifactId>
                 <version>${io.prometheus.version}</version>
             </dependency>
             <!--armeria http server-->
