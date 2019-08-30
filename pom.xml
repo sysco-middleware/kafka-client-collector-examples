@@ -6,7 +6,12 @@
 
     <groupId>no.sysco.middleware.prometheus</groupId>
     <artifactId>kafka-client-collector-examples</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>all-in-one</module>
+        <module>producer</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,52 +24,71 @@
         <log.version>1.7.26</log.version>
     </properties>
 
-    <dependencies>
-        <!--config-->
-        <dependency>
-            <groupId>com.typesafe</groupId>
-            <artifactId>config</artifactId>
-            <version>1.3.3</version>
-        </dependency>
-        <!--custom collector-->
-        <dependency>
-            <groupId>no.sysco.middleware.prometheus</groupId>
-            <artifactId>kafka-client-collector</artifactId>
-            <version>0.0.3</version>
-        </dependency>
-        <!--kafka clients-->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>${kafka-client.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-streams</artifactId>
-            <version>${kafka-client.version}</version>
-        </dependency>
-        <!--prometheus http server-->
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_httpserver</artifactId>
-            <version>${io.prometheus.version}</version>
-        </dependency>
-        <!--armeria http server-->
-        <dependency>
-            <groupId>com.linecorp.armeria</groupId>
-            <artifactId>armeria</artifactId>
-            <version>0.89.0</version>
-        </dependency>
-        <!--logging-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${log.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${log.version}</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <!--config-->
+            <dependency>
+                <groupId>com.typesafe</groupId>
+                <artifactId>config</artifactId>
+                <version>1.3.3</version>
+            </dependency>
+            <!--custom collector-->
+            <dependency>
+                <groupId>no.sysco.middleware.prometheus</groupId>
+                <artifactId>kafka-client-collector</artifactId>
+                <version>0.0.4</version>
+            </dependency>
+            <!--kafka clients-->
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-streams</artifactId>
+                <version>${kafka-client.version}</version>
+            </dependency>
+            <!--prometheus http server-->
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>simpleclient_httpserver</artifactId>
+                <version>${io.prometheus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>simpleclient_hotspot</artifactId>
+                <version>${io.prometheus.version}</version>
+            </dependency>
+            <!--armeria http server-->
+            <dependency>
+                <groupId>com.linecorp.armeria</groupId>
+                <artifactId>armeria</artifactId>
+                <version>0.89.0</version>
+            </dependency>
+            <!--logging-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${log.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${log.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.1.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
