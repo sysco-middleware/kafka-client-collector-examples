@@ -1,6 +1,7 @@
 # Producer dashboard
 ## References 
 * [Datadog](https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/)
+* [Datadog metrics](https://docs.datadoghq.com/integrations/kafka/)
 * [Documentation](https://kafka.apache.org/documentation/#producer_monitoring)
 ## Metrics 
 JMX  
