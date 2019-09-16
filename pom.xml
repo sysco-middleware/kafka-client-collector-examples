@@ -19,8 +19,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <io.prometheus.version>0.6.0</io.prometheus.version>
-        <kafka-client.version>2.1.1</kafka-client.version>
+        <kafka-client.version>2.3.0</kafka-client.version>
 
+        <kafka-client-collector.version>0.0.5-SNAPSHOT</kafka-client-collector.version>
         <log.version>1.7.26</log.version>
     </properties>
 
@@ -36,7 +37,7 @@
             <dependency>
                 <groupId>no.sysco.middleware.prometheus</groupId>
                 <artifactId>kafka-client-collector</artifactId>
-                <version>0.0.4</version>
+                <version>${kafka-client-collector.version}</version>
             </dependency>
             <!--kafka clients-->
             <dependency>
