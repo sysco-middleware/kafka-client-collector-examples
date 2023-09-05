@@ -14,7 +14,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <io.prometheus.version>0.6.0</io.prometheus.version>
-        <kafka-client.version>2.1.1</kafka-client.version>
+        <kafka-client.version>2.6.3</kafka-client.version>
 
         <log.version>1.7.26</log.version>
     </properties>
